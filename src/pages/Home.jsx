@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Unduh from "../components/Input";
 
 const Home = () => {
@@ -20,35 +20,41 @@ const Home = () => {
     };
 
     fetch(import.meta.env.VITE_API_URL, requestOptions)
-      .then((response) => {
-        response.json().then((res) => {
-          setQuality(res);
-        });
-      })
-      .catch((error) => console.log(error));
+        .then((response) => {
+          response.json().then((res) => {
+            setQuality(res);
+          });
+        })
+        .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    quality.forEach(item => {
+      console.log(item.quality);
+    });
+  }, [quality]);
+
   return (
-    <>
-      <div className="home">
-        <Unduh handleSubmit={(e) => handleSubmit(e)} />
-        <div className="home-download">
-          <div className="drop-menu">
-            <a href="" className="dropdown">
-              dropdown
-            </a>
-            <div className="drop-items">
-              {quality.map((item, index) => (
-                <div key={index}>{console.log(item.quality)}</div>
-              ))}
+      <>
+        <div className="home">
+          <Unduh handleSubmit={(e) => handleSubmit(e)} />
+          <div className="home-download">
+            <div className="drop-menu">
+              <a href="" className="dropdown">
+                dropdown
+              </a>
+              <div className="drop-items">
+                {quality.map((item, index) => (
+                    <div key={index}></div>
+                ))}
+              </div>
             </div>
+            <a href="#" className="download" target="_blank" rel="noreferrer">
+              unduh
+            </a>
           </div>
-          <a href="#" className="download" target="_blank" rel="noreferrer">
-            unduh
-          </a>
         </div>
-      </div>
-    </>
+      </>
   );
 };
 
