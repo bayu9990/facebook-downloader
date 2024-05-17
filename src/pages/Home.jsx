@@ -2,31 +2,45 @@ import React, { useState } from "react";
 import Unduh from "../components/Input";
 
 const Home = () => {
+  const [quality, setQuality] = useState([]);
+
+  const handleSubmit = (link) => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      url: link,
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(import.meta.env.VITE_API_URL, requestOptions)
+      .then((response) => {
+        response.json().then((res) => {
+          setQuality(res);
+        });
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="home">
-        <Unduh />
+        <Unduh handleSubmit={(e) => handleSubmit(e)} />
         <div className="home-download">
           <div className="drop-menu">
             <a href="" className="dropdown">
               dropdown
             </a>
             <div className="drop-items">
-              <a href="">
-                gatau
-              </a>
-              <a href="">
-                gatau
-              </a>
-              <a href="">
-                gatau
-              </a>
-              <a href="">
-                gatau
-              </a>
-              <a href="">
-                gatau
-              </a>
+              {quality.map((item, index) => (
+                <div key={index}>{console.log(item.quality)}</div>
+              ))}
             </div>
           </div>
           <a href="#" className="download" target="_blank" rel="noreferrer">
