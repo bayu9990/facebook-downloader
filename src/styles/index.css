@@ -1,0 +1,114 @@
+nav {
+    display: flex;
+    width: 100%;
+    display: flex;
+    background-color: #3C99DC;
+    align-items: center;
+    padding-left: 1.5em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    color: #AFD8E6;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 1em;
+
+}
+
+li a:hover {
+    color: #97bac6;
+}
+
+nav div {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+nav img {
+    width: 18%;
+    height: 2%;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #D5F3FE;
+    margin-right: 1em;
+    align-items: center;
+}
+
+.home-download {
+    width: 40%;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.drop-menu {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #616161;
+}
+
+.drop-menu a {
+    color: #616161;
+}
+
+.drop-items {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    text-align: center;
+    background-color: #B4CBD4;
+    padding: 2em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.drop-items a {
+    color: #616161;
+}
+
+.download {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
