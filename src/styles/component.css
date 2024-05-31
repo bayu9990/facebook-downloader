@@ -1,21 +1,24 @@
 .input {
-    margin-top: 5em;
+    margin-top: 1em;
     width: 50%;
     height: 8%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: #B9DEEC;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
 }
 
 .input input {
-    width: 60%;
+    width: 75%;
     border: none;
     background-color: #B9DEEC;
-    color: white;
+    color: #616161;
+    font-size: 20px;
+    font-weight: 600;
     border-radius: 10px;
+    margin-left: 1em;
 }
 
 .input input:focus {
@@ -23,24 +26,31 @@
 }
 
 .paste {
-    width: 6%;
+    width: 8%;
     display: flex;
     background-color: #66D3FA;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .paste img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    width: 50%;
+    height: 65%;
 }
 
 .unduh {
     width: 20%;
     display: flex;
-    background-color: rgb(167, 100, 0);
-    border: 1px solid black;
+    background-color: #3C99DC;
+    /* border: 1px solid black; */
+    box-shadow: 2px 3px 9px 1px rgba(157,157,157,0.75);
+-webkit-box-shadow: 2px 3px 9px 1px rgba(157,157,157,0.75);
+-moz-box-shadow: 2px 3px 9px 1px rgba(157,157,157,0.75);
+    font-size: 20px;
+    font-weight: 500;
+    color: #CCF2FF;
     border-radius: 10px;
     place-items: center;
     place-content: center;

@@ -25,9 +25,8 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-
       <footer>
-        <p>Footer</p>
+        <h3><center>Copyright © 2024. All Rights Reserved </center></h3>
       </footer>
     </>
   );

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "../styles/component.css";
 import clip from "../assets/images/clip.png";
 
-const Input = (props) => {
+const Input = (properti) => {
   const [link, setLink] = useState("");
 
-  const { handleSubmit } = props;
+  const { handleSubmit } = properti;
 
-  const anjay = () => {
+  const unduh = () => {
     handleSubmit(link); 
   };
 
@@ -30,7 +30,7 @@ const Input = (props) => {
           <img src={clip} onClick={paste} alt="paste" />
         </div>
         <input type="text" value={link} onChange={changes} />
-        <div className="unduh" onClick={anjay}>
+        <div className="unduh" onClick={unduh}>
           Unduh
         </div>
       </div>

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Unduh from "../components/Input";
+import { useState } from "react";
 
 const Home = () => {
-  const [quality, setQuality] = useState([]);
+  const [video, setVideo] = useState([]);
+  const [checkedLink, setCheckedLink] = useState(""); // State to store the checked link
 
   const handleSubmit = (link) => {
     const myHeaders = new Headers();
@@ -20,41 +22,68 @@ const Home = () => {
     };
 
     fetch(import.meta.env.VITE_API_URL, requestOptions)
-        .then((response) => {
-          response.json().then((res) => {
-            setQuality(res);
-          });
-        })
-        .catch((error) => console.log(error));
+      .then((response) => {
+        response.json().then((res) => {
+          setVideo(res.links);
+        });
+      })
+      .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
-    quality.forEach(item => {
-      console.log(item.quality);
-    });
-  }, [quality]);
+  const check = (e) => {
+    setCheckedLink((prevLink) => (prevLink === e ? "" : e));
+  };
 
   return (
-      <>
-        <div className="home">
-          <Unduh handleSubmit={(e) => handleSubmit(e)} />
-          <div className="home-download">
-            <div className="drop-menu">
-              <a href="" className="dropdown">
-                dropdown
-              </a>
-              <div className="drop-items">
-                {quality.map((item, index) => (
-                    <div key={index}></div>
-                ))}
-              </div>
+    <>
+      <div className="home">
+        <h1>
+          <center>
+            Unduh Video atau Audio <br />
+            Sosial Media tanpa watermark
+          </center>
+        </h1>
+        <Unduh handleSubmit={(e) => handleSubmit(e)} />
+        <div className="home-download">
+          <div className="drop-menu">
+            <a href="" className="dropdown">
+              dropdown
+            </a>
+            <div className="drop-items">
+              {/* <a href="">gatau</a>
+              <a href="">gatau</a>
+              <a href="">gatau</a>
+              <a href="">gatau</a>
+              <a href="">gatau</a> */}
+              {video.map((item, index) => (
+                <div
+                  key={index}
+                  className={index % 2 === 0 ? "a ganjil" : "a genap"}
+                >
+                  <input
+                    type="checkbox"
+                    value={item.link}
+                    checked={checkedLink === item.link}
+                    onChange={() => check(item.link)}
+                  />
+                  <label>{item.quality}</label>
+                </div>
+              ))}
             </div>
-            <a href="#" className="download" target="_blank" rel="noreferrer">
+          </div>
+          {checkedLink ? (
+            <a
+              href={checkedLink}
+              className="download"
+              target="_blank"
+              rel="noreferrer"
+            >
               unduh
             </a>
-          </div>
+          ) : null}
         </div>
-      </>
+      </div>
+    </>
   );
 };
 
