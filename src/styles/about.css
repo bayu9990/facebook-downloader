@@ -1,0 +1,155 @@
+.about {
+  width: 100%;
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* background-color: #f3fbff; */
+  background-color: #d5f3fe;
+  text-align: center;
+}
+
+.about h1 {
+  color: #0f5298;
+}
+
+.about p {
+  width: 70%;
+  color: #0f5298;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0.3em 0 1em 0;
+}
+
+.contributor {
+  width: 100%;
+}
+
+.group1 {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.group2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.person {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person img {
+  padding: 15px 10px;
+  border-radius: 50%;
+  width: 80%;
+  height: 100%;
+}
+
+.person2 img {
+  padding: 15px 10px;
+  border-radius: 50%;
+  width: 40%;
+  height: 100%;
+}
+
+.person img:hover,
+.person2 img:hover {
+  animation: scale-up 0.8s ease-in-out;
+}
+
+.person h2 {
+  width: 60%;
+  color: #0f5298;
+}
+
+.person2 h2 {
+  width: 30%;
+  color: #0f5298;
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    height: max-content;
+    padding: 2em 0;
+  }
+
+  .about h1 {
+    width: 90%;
+    font-size: 1.7em;
+    line-height: 1.2em;
+  }
+
+  .about p {
+    width: 90%;
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+
+  .group1 {
+    flex-direction: column;
+  }
+
+  .group2 {
+    flex-direction: column;
+  }
+
+  .person {
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
+
+  .person2 {
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
+
+  .person img {
+    width: 60%;
+  }
+
+  .person2 img {
+    width: 60%;
+  }
+
+  .person h2 {
+    width: 60%;
+  }
+
+  .person2 h2 {
+    width: 50%;
+  }
+}
