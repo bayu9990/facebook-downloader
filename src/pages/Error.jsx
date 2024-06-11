@@ -1,11 +1,17 @@
 import React from "react";
-import faris from "../assets/images/faris.jpg";
+import errorImg from "../assets/images/error.png";
+import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
     <>
-      <div>errrooooorrrr brooooo</div>
-      <img src={faris} alt="" />
+      <div className="errorPage">
+        <img src={errorImg} alt="" />
+        <h1>Maaf, halaman yang anda cari tidak ada!</h1>
+        <p>kembali ke  
+          <Link to="/" > halaman utama</Link>
+        </p>
+      </div>
     </>
   );
 };

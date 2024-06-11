@@ -7,6 +7,8 @@ const Input = (properti) => {
 
   const { handleSubmit } = properti;
 
+  console.log(link);
+
   const unduh = () => {
     handleSubmit(link); 
   };

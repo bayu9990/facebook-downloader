@@ -1,7 +1,7 @@
 .input {
     margin-top: 1em;
     width: 50%;
-    height: 8%;
+    height: 3.6em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,6 +33,7 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .paste img {
@@ -54,4 +55,27 @@
     border-radius: 10px;
     place-items: center;
     place-content: center;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .input {
+        width: 80%;
+        height: 3.2em;
+    }
+
+    .input input {
+        width: 55%;
+        font-size: 17px;
+        margin-left: 0.5em;
+    }
+
+    .paste {
+        width: 17%;
+    }
+
+    .unduh {
+        width: 28%;
+        font-size: 17px;
+    }
 }
